@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dottoml"
-version = "0.1.5"
+version = "0.1.6"
 license = "MIT"
 description = "Environment in TOML format."
 authors = ["gaojian <olivetree123@163.com>"]

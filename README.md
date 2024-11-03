@@ -14,29 +14,27 @@ DEBUG = false
 DB_ENGINE = "django.db.backends.postgresql"
 DB_NAME = "ragx"
 DB_USER = "postgres"
-DB_PASSWORD = "1q2w3e"
-DB_HOST = "127.0.0.1"
+DB_PASSWORD = "123456"
+DB_HOST = "10.10.0.100"
 DB_PORT = 5432
-
 
 [development]
 DEBUG = true
-DB_ENGINE = "django.db.backends.mysql"
-DB_NAME = "ragx"
-DB_USER = "postgres"
-DB_PASSWORD = "1q2w3e"
-DB_HOST = "127.0.0.1"
-DB_PORT = 5432
-
+DB_ENGINE = "django.db.backends.sqlite3"
+DB_NAME = "ragx.db"
+DB_USER = ""
+DB_PASSWORD = ""
+DB_HOST = ""
+DB_PORT = 0
 
 [test]
 DEBUG = true
 DB_ENGINE = "django.db.backends.mysql"
 DB_NAME = "ragx"
-DB_USER = "postgres"
-DB_PASSWORD = "1q2w3e"
+DB_USER = "root"
+DB_PASSWORD = "123456"
 DB_HOST = "127.0.0.1"
-DB_PORT = 5432
+DB_PORT = 3306
 ```
 
 your python code:
@@ -56,6 +54,12 @@ debug = env.get_bool("DEBUG", False)
 sentry_dsn = env.get_str("SENTRY_DSN", None, nullable=True)
 
 print(debug, db_name, db_user, db_pass, db_host, db_port, sentry_dsn)
+```
+
+run your python code:
+```shell
+$ export ENV=development
+$ python your_code.py
 ```
 
 ### Methods

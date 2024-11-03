@@ -63,6 +63,15 @@ $ python your_code.py
 ```
 
 ### Methods
+
+#### `load_env` function
+> def load_env(path: str = ".env.toml", override: bool = False)
+- `path`: the path to the `.env.toml` file;
+- `override`: 
+    - if `os.environ` already has the environment variables, and `override=True`, it will override the environment variables with the values in the `.env.toml` file;
+    - if `os.environ` already has the environment variables, and `override=False`, it will not override the environment variables with the values in the `.env.toml` file;
+    - if `os.environ` does not have the environment variables, it will load the environment variables from the `.env.toml` file;
+
 #### `get` method
 - `get(key: str, default=None, nullable=False) -> Any`
 - `key`: the key in the `.env.toml` file;

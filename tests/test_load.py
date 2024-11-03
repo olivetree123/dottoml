@@ -1,14 +1,16 @@
+import os
 import json
 
 from dottoml import (
     load_env,
-    EnvObject,
     TomlEnvError,
 )
 
 
 def test_load():
-    env = load_env()
+    os.environ["DB_ENGINE"] = "django.db.backends.test"
+
+    env = load_env(path=".env.toml")
 
     DATABASES = {
         'default': {

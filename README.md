@@ -1,5 +1,5 @@
 # dottoml
-Environment in TOML format for Python.
+Environment in TOML for Python.
 
 ### Install
 ```shell
